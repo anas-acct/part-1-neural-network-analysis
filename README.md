@@ -151,53 +151,6 @@ Observation:
 * Dataset imbalance affected prediction of minority class.
 * Mild overfitting was observed.
 
----
-
-# How to Run the Project
-
-## Step 1: Install Required Libraries
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-```
-
----
-
-## Step 2: Place Dataset File
-
-Keep the dataset file in the same folder as the Python notebook/script.
-
-Example:
-
-```text
-project_folder/
-│
-├── customer_churn_nn.csv
-├── part1_solution.ipynb
-└── README.md
-```
-
----
-
-## Step 3: Run the Notebook or Python Script
-
-Execute all cells sequentially.
-
----
-
-# Folder Structure
-
-```text
-Part1_Project/
-│
-├── customer_churn_nn.csv
-├── README.md
-├── neural_network_solution.ipynb
-└── report.pdf
-```
-
----
-
 # Conclusion
 
 This project successfully demonstrates:
