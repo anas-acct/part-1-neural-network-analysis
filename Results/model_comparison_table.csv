@@ -1,0 +1,8 @@
+Configuration,Change Made,Architecture,Learning Rate,Batch Size,Activation,Epochs Run,Test Accuracy,Test Loss,ROC-AUC,F1-Score,Recall
+Config 1 - Baseline,Baseline (reference),"(128, 64, 32)",0.001,32,relu,34,0.985,0.0602,0.8701,0.0,0.0
+Config 2 - Shallow (1 layer),Hidden layers: 3 → 1 (shallow),"(64,)",0.001,32,relu,33,0.985,0.0648,0.8194,0.0,0.0
+Config 3 — Wider (256-128-64),Neurons doubled (wider network),"(256, 128, 64)",0.001,32,relu,24,0.985,0.0684,0.802,0.0,0.0
+Config 4 — High LR (0.01),Learning rate: 0.001 → 0.01,"(128, 64, 32)",0.01,32,relu,24,0.985,0.0757,0.8177,0.0,0.0
+Config 5 — Low LR (0.0001),Learning rate: 0.001 → 0.0001,"(128, 64, 32)",0.0001,32,relu,120,0.985,0.0704,0.8892,0.0,0.0
+Config 6 — Large Batch (128),Batch size: 32 → 128,"(128, 64, 32)",0.001,128,relu,67,0.985,0.0643,0.8689,0.0,0.0
+Config 7 — tanh Activation,Activation: ReLU → tanh,"(128, 64, 32)",0.001,32,tanh,46,0.985,0.0576,0.9082,0.0,0.0
