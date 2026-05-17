@@ -1,164 +1,267 @@
-# README – Part 1: Neural Network Fundamentals and Training Behavior Analysis
+# Part 1 — Neural Network Fundamentals and Training Behaviour Analysis
 
-## Project Title
-
-Customer Churn Prediction using Neural Networks
-
----
-
-# Project Overview
-
-This project demonstrates the implementation and analysis of a Feed-Forward Neural Network for a supervised learning problem using a structured dataset.
-
-The objective of this assignment is not only to build a predictive model but also to understand how neural networks learn through:
-
-* Forward propagation
-* Loss calculation
-* Backpropagation
-* Weight and bias updates
-* Hyperparameter tuning
-
-The project uses customer churn data to predict whether a customer is likely to leave the service.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow)
+![Task](https://img.shields.io/badge/Task-Customer%20Churn%20Prediction-purple)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
 ---
 
-# Dataset Information
+# 📌 Project Overview
 
-Dataset File:
+This project focuses on understanding how neural networks work by building a customer churn prediction system using a Feed-Forward Neural Network.
 
+The main objective was not just to train a model, but also to study the complete learning process of neural networks, including:
+- Forward propagation
+- Loss calculation
+- Backpropagation
+- Weight updates
+- Hyperparameter tuning
+
+The model predicts whether a customer is likely to leave a service based on customer-related features from a structured dataset.
+
+---
+
+# 📂 Project Structure
+
+```text
+part-1-neural-network-fundamentals/
+│
+├── README.md
+├── notebook.ipynb
+├── requirements.txt
+├── customer_churn_nn.csv
+│
+└── results/
+    ├── dataset_analysis.png
+    ├── preprocessing_pipeline.png
+    ├── training_curves.png
+    ├── confusion_matrix.png
+    ├── hyperparameter_comparison.png
+    └── final_predictions.png
+```
+
+---
+
+# 📊 Dataset Information
+
+### Dataset File
 `customer_churn_nn.csv`
 
-Target Variable:
+### Prediction Target
 
-`churn`
+| Value | Meaning |
+|---|---|
+| 0 | Customer stayed |
+| 1 | Customer churned |
 
-* 0 → Customer did not churn
-* 1 → Customer churned
+### Dataset Characteristics
+- Structured tabular dataset
+- Contains both numerical and categorical features
+- Binary classification problem
 
-Dataset Characteristics:
-
-* Structured tabular dataset
-* Contains numerical and categorical features
-* Binary classification problem
-
----
-
-# Tasks Covered
-
-## Task 1 – Dataset Understanding
-
-Performed:
-
-* Dataset loading
-* Shape analysis
-* Feature identification
-* Missing value checking
-* Statistical summary
-* Target variable distribution analysis
+The dataset represents customer information that can help predict whether a user may discontinue the service.
 
 ---
 
-## Task 2 – Data Preprocessing
+# 🔍 Task 1 — Dataset Understanding
 
-Performed:
+The first step involved exploring and understanding the dataset.
 
-* Missing value handling
-* Categorical encoding using OneHotEncoder
-* Feature scaling using StandardScaler
-* Train-test splitting
+### Analysis Performed
+- Dataset loading
+- Shape and feature inspection
+- Missing value checking
+- Statistical summary generation
+- Target distribution analysis
 
----
-
-## Task 3 – Neural Network Model Building
-
-Implemented:
-
-* Feed-forward neural network
-* Hidden layers with ReLU activation
-* Adam optimizer
-* Binary classification output layer
-
-Libraries Used:
-
-* Scikit-learn
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
+This helped identify potential preprocessing requirements before training the neural network.
 
 ---
 
-## Task 4 – Training and Evaluation
+# 🧹 Task 2 — Data Preprocessing
 
-Evaluated using:
+Data preprocessing was an important step because neural networks perform best when the input data is clean and properly formatted.
 
-* Training accuracy
-* Testing accuracy
-* Confusion matrix
-* Classification report
+### Preprocessing Steps
+- Handling missing values
+- Encoding categorical variables using `OneHotEncoder`
+- Feature scaling using `StandardScaler`
+- Splitting the dataset into training and testing sets
 
----
-
-## Task 5 – Hyperparameter Experimentation
-
-Experiments were conducted by changing:
-
-* Hidden layers
-* Number of neurons
-* Activation functions
-* Learning rate
-* Batch size
-* Number of epochs
-
-A comparison table was created to analyze performance differences.
+### Why Scaling Matters
+Neural networks are sensitive to feature magnitude. Standardization ensures that all features contribute more evenly during training.
 
 ---
 
-## Task 6 – Final Reflection
+# 🧠 Task 3 — Neural Network Model
 
-Included explanations about:
+A Feed-Forward Neural Network was implemented for customer churn prediction.
 
-* Role of weights and biases
-* Importance of activation functions
-* Effect of learning rate
-* Underfitting and overfitting
-
----
-
-# Neural Network Learning Process
-
-The report also explains:
-
-1. Forward Pass
-2. Loss Function
-3. Backpropagation
-4. Gradient Descent Parameter Updates
-
-This helps understand how neural networks optimize themselves during training.
+## Model Components
+- Input layer
+- Hidden layers with ReLU activation
+- Output layer with sigmoid activation
+- Adam optimizer
 
 ---
 
-# Model Performance Summary
+## Libraries Used
 
-| Metric            | Value  |
-| ----------------- | ------ |
-| Training Accuracy | 100%   |
-| Testing Accuracy  | 98.25% |
+| Library | Purpose |
+|---|---|
+| Pandas | Data handling |
+| NumPy | Numerical operations |
+| Scikit-learn | Preprocessing and evaluation |
+| TensorFlow / Keras | Neural network implementation |
+| Matplotlib & Seaborn | Visualization |
 
-Observation:
+---
 
-* The model achieved high accuracy.
-* Dataset imbalance affected prediction of minority class.
-* Mild overfitting was observed.
+# ⚙️ Task 4 — Model Training and Evaluation
 
-# Conclusion
+The neural network was trained using the processed dataset and evaluated on unseen test data.
 
-This project successfully demonstrates:
+## Evaluation Metrics
 
-* Neural network implementation
-* Data preprocessing
-* Model training and evaluation
-* Hyperparameter tuning
-* Understanding of neural network learning behavior
+| Metric | Value |
+|---|---|
+| Training Accuracy | 100% |
+| Testing Accuracy | 98.25% |
 
-The assignment provides both practical implementation and theoretical understanding of neural network fundamentals.
+### Additional Evaluation Methods
+- Confusion Matrix
+- Classification Report
+- Accuracy Curves
+
+---
+
+## Observations
+- The model achieved very high prediction accuracy.
+- Some imbalance in the dataset affected minority-class predictions.
+- Slight overfitting was observed because training accuracy was higher than testing accuracy.
+
+---
+
+# 🔬 Task 5 — Hyperparameter Experimentation
+
+Several experiments were performed to understand how different hyperparameters affect model performance.
+
+## Parameters Tested
+- Number of hidden layers
+- Number of neurons
+- Activation functions
+- Learning rate
+- Batch size
+- Epoch count
+
+A comparison table was created to analyze how each configuration influenced accuracy and training stability.
+
+---
+
+# 📘 Task 6 — Understanding Neural Network Learning
+
+This section focused on the theoretical understanding of how neural networks learn from data.
+
+---
+
+## Forward Propagation
+During the forward pass, input features move through the network layer by layer until the final prediction is generated.
+
+---
+
+## Loss Function
+The loss function measures how far the predicted output is from the actual target value.
+
+The optimizer tries to minimize this loss during training.
+
+---
+
+## Backpropagation
+Backpropagation calculates how much each weight contributed to the prediction error and updates the weights accordingly.
+
+---
+
+## Gradient Descent
+Gradient descent is used to update the network parameters step by step in the direction that reduces the loss.
+
+---
+
+# 💡 Important Concepts Learned
+
+## Role of Weights and Biases
+Weights determine the importance of input features, while biases help shift activation values and improve learning flexibility.
+
+---
+
+## Importance of Activation Functions
+Activation functions introduce non-linearity, allowing the neural network to learn complex patterns from the data.
+
+---
+
+## Learning Rate
+The learning rate controls how quickly the model updates its parameters during training.
+
+- Very high learning rate → unstable training
+- Very low learning rate → slow convergence
+
+---
+
+## Underfitting vs Overfitting
+
+| Problem | Meaning |
+|---|---|
+| Underfitting | Model fails to learn patterns properly |
+| Overfitting | Model memorizes training data and generalizes poorly |
+
+Regularization and hyperparameter tuning help reduce overfitting.
+
+---
+
+# 📈 Final Results
+
+| Metric | Performance |
+|---|---|
+| Training Accuracy | 100% |
+| Testing Accuracy | 98.25% |
+| Task Type | Binary Classification |
+| Model Type | Feed-Forward Neural Network |
+
+---
+
+# 🚀 How to Run the Project
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Launch Jupyter Notebook
+
+```bash
+jupyter notebook notebook.ipynb
+```
+
+---
+
+## Google Colab Option
+
+1. Upload:
+   - `notebook.ipynb`
+   - `customer_churn_nn.csv`
+
+2. Then select:
+
+```text
+Runtime → Run All
+```
+
+---
+
+# 📚 References
+
+1. Goodfellow et al. — *Deep Learning*
+2. TensorFlow Keras Documentation
+3. Scikit-learn Documentation
+4. Nielsen, Michael — *Neural Networks and Deep Learning*
